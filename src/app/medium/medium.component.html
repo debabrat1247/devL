@@ -1,0 +1,22 @@
+<app-test></app-test>
+<div class="container-fluid">
+
+<form *ngIf="!showmarks" #userform="ngForm" (ngSubmit)="myresponse(userform.value)">
+
+    <span *ngFor="let x of datas">
+        <div class="form-group">
+        {{x.no}}.{{x.question}}<br>
+        <input id="{{x.a}}"  type="radio" name="qno{{x.no}}" value="{{x.a}}"  ngModel >a.{{x.a}}<br>
+        <input id="{{x.b}}"  type="radio" name="qno{{x.no}}" value="{{x.b}}"  ngModel >b.{{x.b}}<br>
+        <input id="{{x.c}}"  type="radio" name="qno{{x.no}}" value="{{x.c}}"  ngModel >c.{{x.c}}<br>
+        <input id="{{x.d}}"  type="radio" name="qno{{x.no}}" value="{{x.d}}"  ngModel >d.{{x.d}}<br>
+    </div>
+    </span>
+    
+    <button [disabled]="!userform.form.valid" type="submit" class="btn btn-primary">Submit</button>  
+    
+  </form>
+  <div *ngIf="showmarks">
+    <p>Your Score:<span style="color: blue;">{{marks}}</span></p>
+  </div>
+</div>

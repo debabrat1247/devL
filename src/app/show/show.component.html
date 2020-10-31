@@ -1,0 +1,12 @@
+<div class="container">
+   <p>Child component</p> 
+    <input type="text" #cdata (keyup)="onChange(cdata.value)">
+    <p>value from parent</p>
+    {{parentdata}}
+</div>
+<div class="container">
+    <p>Showing details</p>
+    <ul *ngFor="let x of names">
+      <li>Name:{{x.username}},Phone:{{x.phone}},State:{{x.state}}</li>
+    </ul>
+  </div>

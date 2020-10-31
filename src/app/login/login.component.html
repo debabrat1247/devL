@@ -1,0 +1,41 @@
+<body >
+<br><br>
+<h2 *ngIf="!submit" style="text-align: center;color: darkblue;"><b>Login</b></h2>
+<div  *ngIf="!submit" class="container" style="background-color: lightblue;">
+  
+    <br><br>
+    <form #userform="ngForm" (ngSubmit)="onSubmit(userform.value)">
+      <div class="form-group">
+        <label>User_Name</label>
+        <input  type="text" #nameref="ngModel"  required class="form-control" name="name" [(ngModel)]="name">
+                
+      </div>
+     
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" #passref="ngModel" required class="form-control" name="password" [(ngModel)]="password">
+       
+      </div>
+      
+      <button [disabled]="!userform.form.valid" type="submit" class="btn btn-primary">Submit</button>
+
+      <br><br>
+      <div *ngIf="notfound" class="alert alert-danger">Username not registered</div>
+      <div *ngIf="notmatch" class="alert alert-danger">Wrong password</div>
+      <br><br>
+      
+    </form>
+    
+    
+  </div>
+  <div *ngIf="submit">
+      
+    <h1 style="color: blueviolet;text-align: center;"><b>Sucessful Login</b></h1>
+    <h2 style="text-align: center;"><b>Redirecting to profile........</b></h2>
+    <br><br><br><br>
+
+</div>
+  <br><br><br><br><br>
+</body>
+ 
+

@@ -1,0 +1,55 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm">
+      <h2>Welcome <span style="color: darkgreen;">{{username}}</span></h2>
+      <p>Your details:</p>
+    <p *ngFor="let x of datas">
+      User_Name:<span style="color: darkblue;">{{x.username}}</span><br>
+      Email:<span style="color: darkblue;">{{x.email}}</span><br>
+      Phone:<span style="color: darkblue;">{{x.phone}}</span><br>
+      State:<span style="color: darkblue;">{{x.state}}</span><br>
+    </p>
+    </div>
+    <div class="col-sm">
+      <br>
+      <p style="text-align: right;"><button type="button" class="btn btn-outline-success" (click)="this.clicked()">Change password</button></p>
+      <br>
+      <p style="text-align: center; color: darkgreen;" *ngIf="success"><b>Updated sucessfully</b></p>
+      <form *ngIf="isclick" #userform="ngForm" (ngSubmit)="onupdate(userform.value)">
+        <div class="form-group">
+          <label>Old Password</label>
+          <input  type="password" #oldpassref="ngModel"  required class="form-control" name="oldpassword" [(ngModel)]="oldpassword">
+                  
+        </div>
+       
+        <div class="form-group">
+          <label>New Password</label>
+          <input type="password"  #newpassref="ngModel"  pattern="^[0-9][0-9]{4}$" required class="form-control" name="newpassword" [(ngModel)]="newpassword">
+          <div *ngIf="newpassref.errors && (newpassref.dirty || newpassref.touched)" class="alert alert-danger">
+            <div [hidden]="!newpassref.errors.required">
+              please enter password
+            </div >
+          
+            <div [hidden]="!newpassref.errors.pattern">
+              please enter only 5 digit number
+            </div >
+    
+    
+          </div>
+        </div>
+        <div *ngIf="notmatch" class="alert alert-danger">incorrect old password </div>
+        <div class="row">
+        &nbsp;<button [disabled]="!userform.form.valid" type="submit" class="btn btn-primary">Submit</button>&nbsp;
+        <button  type="submit" class="btn btn-primary" (click)="cancel()">Cancel</button>
+      </div>
+        <br><br>
+        
+        <br><br>
+        
+      </form>
+    </div>
+
+  </div>
+
+</div>

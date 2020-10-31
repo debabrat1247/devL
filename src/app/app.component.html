@@ -1,0 +1,20 @@
+
+<nav class="navbar navbar-dark bg-primary">
+    
+  <div class="container-fluid">
+   
+      <button  type="button" class="btn btn-danger" routerLink="/home" >Home</button>
+      <button  type="button" class="btn btn-warning" routerLink="/aboutus">About us</button>
+      <button  *ngIf="!auth.loggedin()" type="button" class="btn btn-success" routerLink="/register">Register</button>
+      <button  *ngIf="!auth.loggedin()" type="button" class="btn btn-dark" routerLink="/login">Login</button>
+      <button  *ngIf="auth.loggedin()" type="button" class="btn btn-success"  routerLink="/login/profile">Profile</button>
+      <button  *ngIf="auth.loggedin()" type="button" class="btn btn-danger"  routerLink="/login/profile/test">Test</button>
+      <button  *ngIf="auth.loggedin()" type="button" class="btn btn-dark" (click)="auth.logoutuser()" routerLink="/login">logout</button>
+    
+  </div>
+  
+</nav>
+<router-outlet></router-outlet>
+
+
+

@@ -1,0 +1,73 @@
+<app-test></app-test>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm">
+            <br>
+            <p>You can see your previous response and score.</p>
+            
+        </div>
+        <div class="col-sm">
+            <br>
+            <div style="text-align: right;">
+                <button  class="btn btn-outline-dark" (click)="getresponse()">Response</button>&nbsp;
+                <button  class="btn btn-outline-dark" (click)="getscore()">Score</button>&nbsp;
+                <button  class="btn btn-outline-dark" (click)="selected()">Chart</button><br><br>
+                <button  class="btn btn-outline-dark btn-sm" *ngIf="clicked1" (click)="getchart1()">Chart1</button>&nbsp;
+                <button  class="btn btn-outline-dark btn-sm" *ngIf="clicked2" (click)="getchart2()">Chart2</button><br>
+                
+            </div>
+            
+        </div>
+    </div>
+    <div *ngIf="seeresponse">
+        <table style="width:100%">
+            <tr>
+                <th>Completion time</th>
+                <th>Username</th>
+                <th>Set_number</th>
+                <th>Question_no</th>
+                <th>Your_response</th>
+            </tr>
+            
+                <tr *ngFor="let x of responses">
+                    <td>{{x.time}}</td>
+                    <td>{{x.username}}</td>
+                    <td>{{x.setno}}</td>
+                    <td>{{x.questionno}}</td>
+                    <td>{{x.userres}}</td>
+                </tr>   
+            
+        </table>
+        
+    </div>
+    <div *ngIf="seescore">
+        <table style="width:100%">
+            <tr>
+                <th>Completion time</th>
+                <th>Username</th>
+                <th>Set_number </th>
+                <th>Marks</th>
+            </tr>
+            
+                <tr *ngFor="let x of scores">
+                    <td>{{x.time}}</td>
+                    <td>{{x.username}}</td>
+                    <td>{{x.setno}}</td>
+                    <td>{{x.marks}} </td>
+                    
+                </tr>   
+            
+        </table>
+
+    </div>
+    <div id="chartContainer1" *ngIf="seechart1" >
+        
+
+    </div>
+    <div id="chartContainer2" *ngIf="seechart2" >
+
+    </div>
+</div>
+
+
+

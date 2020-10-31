@@ -1,0 +1,10 @@
+<app-home></app-home>
+<app-registration></app-registration>
+<div class="container">
+  <p>Parent component</p>
+  <input type="text" #pdata (keyup)="0">
+  <p>value from child</p>
+  {{cdata}}
+</div>
+<app-show (childevent)="cdata=$event" [parentdata]="pdata.value" ></app-show>
+<app-showname></app-showname>
