@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
 export class RegistrationComponent implements OnInit {
 
   title = 'confusion';
-  name="raju";
-  email="raju123@gmail.com";
-  phone="9134567834";
-  state="Bihar";
+  name="";
+  email="";
+  phone="";
+  state="";
   password="";
   exist=false;
   submit=false;
@@ -27,7 +27,7 @@ export class RegistrationComponent implements OnInit {
           .set('Authorization', 'my-auth-token')
           .set('Content-Type', 'application/json');
 
-    this._http.post('http://127.0.0.1:3000/registration', JSON.stringify(value), {
+    this._http.post('https://frightful-wizard-99727.herokuapp.com/registration', JSON.stringify(value), {
       headers: headers
     })
     .subscribe(data => {

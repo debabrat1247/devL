@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
           .set('Authorization', 'my-auth-token')
           .set('Content-Type', 'application/json');
 
-    this._http.post('http://127.0.0.1:3000/login', JSON.stringify(value), {
+    this._http.post('https://frightful-wizard-99727.herokuapp.com/login', JSON.stringify(value), {
       headers: headers
     })
     .subscribe(data => {

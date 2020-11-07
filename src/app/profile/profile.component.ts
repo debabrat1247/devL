@@ -30,7 +30,7 @@ export class ProfileComponent implements OnInit {
           .set('Authorization', 'my-auth-token')
           .set('Content-Type', 'application/json');
 
-    this._http.post('http://127.0.0.1:3000/profile', obj, {
+    this._http.post('https://frightful-wizard-99727.herokuapp.com/profile', obj, {
       headers: headers
     })
     .subscribe(data => {
@@ -63,7 +63,7 @@ export class ProfileComponent implements OnInit {
           .set('Authorization', 'my-auth-token')
           .set('Content-Type', 'application/json');
 
-    this._http.put('http://127.0.0.1:3000/registration', value, {
+    this._http.put('https://frightful-wizard-99727.herokuapp.com/registration', value, {
       headers: headers
     })
     .subscribe(data => {

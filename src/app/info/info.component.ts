@@ -36,7 +36,7 @@ export class InfoComponent implements OnInit {
   }
   getresponse()
   {
-    this.http.post<any>("http://127.0.0.1:3000/getresponse",{username:this.username})
+    this.http.post<any>("https://frightful-wizard-99727.herokuapp.com/getresponse",{username:this.username})
     .subscribe(data=>{
       this.responses=data;
       this.seeresponse=true;
@@ -52,7 +52,7 @@ export class InfoComponent implements OnInit {
   }
   getscore()
   {
-    this.http.post<any>("http://127.0.0.1:3000/getscore",{username:this.username})
+    this.http.post<any>("https://frightful-wizard-99727.herokuapp.com/getscore",{username:this.username})
     .subscribe(data=>{
       this.scores=data;
       this.seescore=true;
@@ -68,7 +68,7 @@ export class InfoComponent implements OnInit {
 
   getchart1()
   {
-    this.http.post<any>("http://127.0.0.1:3000/getscore",{username:this.username})
+    this.http.post<any>("https://frightful-wizard-99727.herokuapp.com/getscore",{username:this.username})
     .subscribe(data=>{
       this.scores=data;
       this.seechart1=true;
@@ -114,7 +114,7 @@ export class InfoComponent implements OnInit {
   }
   getchart2()
   {
-    this.http.post<any>("http://127.0.0.1:3000/getscore",{username:this.username})
+    this.http.post<any>("https://frightful-wizard-99727.herokuapp.com/getscore",{username:this.username})
     .subscribe(data=>{
       this.scores=data;
       this.seechart2=true;

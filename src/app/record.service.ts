@@ -14,11 +14,11 @@ import { catchError } from 'rxjs/operators';
 
 export class Record{
   public shared:string;
-  private _url:string="http://localhost:3000/record";
-  private easy="http://localhost:3000/easy";
-  private medium="http://localhost:3000/medium";
-  private hard="http://localhost:3000/hard";
-  private resurl="http://localhost:3000/registration";
+  private _url:string="https://frightful-wizard-99727.herokuapp.com/record";
+  private easy="https://frightful-wizard-99727.herokuapp.com/easy";
+  private medium="https://frightful-wizard-99727.herokuapp.com/medium";
+  private hard="https://frightful-wizard-99727.herokuapp.com/hard";
+  private resurl="https://frightful-wizard-99727.herokuapp.com/registration";
 
   //private _url:string="api/data.json";
   constructor(private _http:HttpClient){}

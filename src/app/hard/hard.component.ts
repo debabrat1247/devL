@@ -48,7 +48,7 @@ export class HardComponent implements OnInit {
     value.size=size;
     value.setno=3;
     console.log(value);
-    this.http.post('http://127.0.0.1:3000/response',value)
+    this.http.post('https://frightful-wizard-99727.herokuapp.com/response',value)
     .subscribe(data=>{
         console.log("submited");
         console.log(data);
